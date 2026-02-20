@@ -15,9 +15,9 @@
             background: radial-gradient(circle, #ce1212 0%, #1a1a1a 100%);
             color: #fff;
             margin: 0;
-            padding: 20px 0;
+            padding: 40px 0; /* زيادة الهامش العلوي */
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* تغيير المحاذاة لتبدأ من الأعلى */
             justify-content: center;
         }
         .glass-panel {
@@ -27,6 +27,8 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             border: 2px solid #ce1212;
             color: #1a1a1a;
+            width: 100%;
+            max-width: 1024px;
         }
         .wheel-container {
             position: relative;
@@ -116,7 +118,6 @@
     <div id="winnerModal">
         <div class="modal-content relative shadow-2xl">
             <div class="mb-4 flex justify-center">
-                <!-- إضافة لوجو القاسم هنا -->
                 <img src="https://i.ibb.co/KzNYHtvM/1003840964-removebg-preview.png" alt="لوجو القاسم" class="h-24 object-contain animate-bounce">
             </div>
             <div class="mb-2">
@@ -131,22 +132,26 @@
         </div>
     </div>
 
-    <!-- Main Game Page (فتح مباشر بدون تسجيل دخول) -->
-    <div id="mainPage" class="glass-panel p-6 w-full max-w-5xl flex flex-col mx-4 my-4">
-        <div class="flex justify-between items-center mb-4 border-b pb-3 flex-wrap gap-4">
+    <!-- Main Game Page -->
+    <div id="mainPage" class="glass-panel p-6 flex flex-col mx-4 my-4">
+        <!-- تم تحسين الهيدر هنا لضمان الظهور -->
+        <div class="flex justify-between items-center mb-6 border-b-2 border-red-50 pb-4 flex-wrap gap-4">
             <div class="flex items-center gap-4">
-                <img src="https://i.ibb.co/KzNYHtvM/1003840964-removebg-preview.png" alt="لوجو القاسم" class="h-12">
-                <h1 class="text-xl font-bold text-gray-800">لوحة سحب مطعم القاسم</h1>
+                <img src="https://i.ibb.co/KzNYHtvM/1003840964-removebg-preview.png" alt="لوجو القاسم" class="h-14 w-auto drop-shadow-sm">
+                <div>
+                    <h1 class="text-2xl font-black text-gray-800 leading-none">لوحة سحب مطعم القاسم</h1>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Al-Qasim Giveaway System</span>
+                </div>
             </div>
-            <div class="flex flex-col items-end gap-1">
-                <div id="platformIndicator" class="bg-red-600 text-white px-4 py-1 rounded-full text-xs font-bold shadow-sm">
+            <div class="flex flex-col items-end gap-2">
+                <div id="platformIndicator" class="bg-red-600 text-white px-5 py-1.5 rounded-full text-xs font-black shadow-md">
                     فيسبوك 🔵
                 </div>
-                <div class="flex gap-1 mt-1 flex-wrap justify-end">
-                    <button onclick="setPlatform('فيسبوك', '🔵')" class="px-2 py-1 rounded bg-blue-100 text-[10px] font-bold hover:bg-blue-200">فيسبوك</button>
-                    <button onclick="setPlatform('إنستجرام', '🟣')" class="px-2 py-1 rounded bg-purple-100 text-[10px] font-bold hover:bg-purple-200">إنستجرام</button>
-                    <button onclick="setPlatform('سناب شات', '🟡')" class="px-2 py-1 rounded bg-yellow-100 text-[10px] font-bold hover:bg-yellow-200">سناب</button>
-                    <button onclick="setPlatform('إكس (X)', '⚫')" class="px-2 py-1 rounded bg-gray-200 text-[10px] font-bold hover:bg-gray-300">إكس X</button>
+                <div class="flex gap-1.5 mt-1 flex-wrap justify-end">
+                    <button onclick="setPlatform('فيسبوك', '🔵')" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-[10px] font-black hover:bg-blue-100 transition shadow-sm border border-blue-100">فيسبوك</button>
+                    <button onclick="setPlatform('إنستجرام', '🟣')" class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-700 text-[10px] font-black hover:bg-purple-100 transition shadow-sm border border-purple-100">إنستجرام</button>
+                    <button onclick="setPlatform('سناب شات', '🟡')" class="px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-[10px] font-black hover:bg-yellow-100 transition shadow-sm border border-yellow-100">سناب</button>
+                    <button onclick="setPlatform('إكس (X)', '⚫')" class="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-[10px] font-black hover:bg-gray-200 transition shadow-sm border border-gray-200">إكس X</button>
                 </div>
             </div>
         </div>
